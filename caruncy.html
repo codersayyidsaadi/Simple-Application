@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Application</title>
+    <link rel="stylesheet" href="caruncy.css">
+</head>
+
+<body>
+   
+   <div class="my_div">
+      <h3>Simple Caruncy Converter Web Application</h3>
+       <input type="number" id="input_number">
+       <select name="" id="curency">
+           <option value="USD">USD</option>
+           <option value="CAD">CAD</option>
+           <option value="EURO">EURO</option>
+           <option value="WON">WON</option>
+       </select><br/>
+       <button>Convert</button>
+       <h2></h2>
+   </div>
+   
+   
+    <script>
+        
+        let rate=0;
+        
+    document.querySelector('button').addEventListener('click', function(){
+        let amount=document.querySelector('#input_number').value;
+        let curency=document.querySelector('#curency').value;
+        
+        switch(curency){
+            case 'USD':
+                rate = 85.46;
+                break;
+                
+                case 'CAD':
+                rate = 67.31;
+                break;
+                
+                case 'EURO':
+                rate = 90.09;
+                break;
+                
+                case 'WON':
+                rate = 0.071;
+                break;
+        }
+        
+        let result=amount*rate;
+        result=Math.round(result);
+        document.querySelector('h2').innerHTML=`${amount} ${curency} = ${result}BDT`;
+    });
+    
+    
+    
+    </script>
+</body>
+</html>
